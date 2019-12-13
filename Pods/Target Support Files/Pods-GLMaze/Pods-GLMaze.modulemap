@@ -1,0 +1,6 @@
+framework module Pods_GLMaze {
+  umbrella header "Pods-GLMaze-umbrella.h"
+
+  export *
+  module * { export * }
+}
