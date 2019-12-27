@@ -18,15 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// 在应用程序启动后用于自定义的覆盖点。
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         UIViewController.initializeMethod()
+        GLProgressHUD.initConfig()
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
-        let vc = GLMazeListVC.init()
+        let vc = GLMazeMainVC.init()
         let nav = GLMainNavController.init(rootViewController: vc)
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
-        
         return true
     }
 

@@ -8,8 +8,10 @@
 
 import UIKit
 
-class GLMazeListVC: UIViewController {
+class GLMazeListVC: GLMainViewController {
 
+    var startGrade: Int = 1
+    
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: flowLayout)
         collectionView.backgroundColor = .clear
@@ -34,9 +36,8 @@ class GLMazeListVC: UIViewController {
         // Do any additional setup after loading the view.
         
         title = "经典"
-        view.backgroundColor = .white
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "设置", style: .plain, target: self, action: #selector(navSetAction))
-        navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "迷宫", style: .plain, target: nil, action: nil)
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "", style: .plain, target: nil, action: nil)
         
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
@@ -55,18 +56,18 @@ class GLMazeListVC: UIViewController {
 extension GLMazeListVC: UICollectionViewDelegate, UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 99
+        return 50
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = GLMazeListCell.gl_dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
-        cell.l_grade.text = "\(indexPath.item + 1)"
+        cell.l_grade.text = "\(indexPath.item + startGrade)"
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = GLMazeVC.init()
-        vc.grade = indexPath.item + 1
+        vc.grade = indexPath.item + startGrade
         navigationController?.pushViewController(vc, animated: true)
     }
     

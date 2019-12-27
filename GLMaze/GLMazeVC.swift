@@ -19,27 +19,52 @@
 
 import UIKit
 import Foundation
+import SVProgressHUD
+
+
 
 class GLMazeVC: GLMainViewController {
 
     var grade: Int = 1
     
     var row: Int {
-        return 10 + grade * 2
+        return 8 + grade * 1
     }
     var column: Int {
-        return 15 + grade * 3
+        return 12 + grade * 1 + grade / 2
+    }
+    
+    var gridModels: [[GLGridModel]] = []
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        GLProgressHUD.dismissOne()
+        GLMazeManager.setStop()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        title = "\(grade)"
         
-        let gridModels = GLMazeManager.createMazeData(row: row, column: column)
+        GLProgressHUD.showIndicator(msg: "加载中...")
         
-        GLMazeManager.createPath(gridModels: gridModels)
-        GLMazeManager.drawMaze(gridModels: gridModels, toView: view)
+        gridModels = GLMazeManager.createMazeData(row: row, column: column)
+        GLMazeManager.createPath(gridModels: gridModels) {
+            
+            GLMazeManager.drawMaze(gridModels: self.gridModels, toView: self.view)
+            GLProgressHUD.dismissOne()
+        }
+        
+        
     }
     
     

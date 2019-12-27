@@ -8,8 +8,9 @@
 
 import UIKit
 
-let wallColor = UIColor.white(238)
-let wallWidth = 2
+let WallColor = UIColor.white(138)
+let WallW = 2
+let GridW = 20
 
 class GLGridModel: NSObject {
     var row: Int = 0
@@ -31,46 +32,31 @@ class GLGridModel: NSObject {
         return set
     }
     
-    lazy var view: UIView = {
-        let view = UIView.init()
+    lazy var view: CALayer = {
+        let view = CALayer.init()
         if top == nil {
-            let t = UIView.init()
-            t.backgroundColor = wallColor
-            view.addSubview(t)
-            t.snp.makeConstraints { (make) in
-                make.left.right.equalToSuperview()
-                make.top.equalToSuperview().offset(-wallWidth)
-                make.height.equalTo(wallWidth)
-            }
+            let t = CALayer.init()
+            t.frame = CGRect(x: -WallW, y: -WallW, width: GridW+WallW, height: WallW)
+            t.backgroundColor = WallColor.cgColor
+            view.addSublayer(t)
         }
         if left == nil {
-            let l = UIView.init()
-            l.backgroundColor = wallColor
-            view.addSubview(l)
-            l.snp.makeConstraints { (make) in
-                make.bottom.equalToSuperview()
-                make.left.top.equalToSuperview().offset(-wallWidth)
-                make.width.equalTo(wallWidth)
-            }
+            let l = CALayer.init()
+            l.frame = CGRect(x: -WallW, y: -WallW, width: WallW, height: GridW+WallW)
+            l.backgroundColor = WallColor.cgColor
+            view.addSublayer(l)
         }
         if !bottom.isPath {
-            let b = UIView.init()
-            b.backgroundColor = wallColor
-            view.addSubview(b)
-            b.snp.makeConstraints { (make) in
-                make.left.bottom.right.equalToSuperview()
-                make.height.equalTo(wallWidth)
-            }
+            let b = CALayer.init()
+            b.frame = CGRect(x: -WallW, y: GridW-WallW, width: GridW+WallW, height: WallW)
+            b.backgroundColor = WallColor.cgColor
+            view.addSublayer(b)
         }
         if !right.isPath {
-            let r = UIView.init()
-            r.backgroundColor = wallColor
-            view.addSubview(r)
-            r.snp.makeConstraints { (make) in
-                make.right.bottom.equalToSuperview()
-                make.top.equalToSuperview().offset(-wallWidth)
-                make.width.equalTo(wallWidth)
-            }
+            let r = CALayer.init()
+            r.frame = CGRect(x: GridW-WallW, y: -WallW, width: WallW, height: GridW+WallW)
+            r.backgroundColor = WallColor.cgColor
+            view.addSublayer(r)
         }
         
         return view
