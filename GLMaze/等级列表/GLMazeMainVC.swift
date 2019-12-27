@@ -17,7 +17,7 @@ class GLMazeMainVC: GLMainViewController {
         
         pageMenu.backgroundColor = .white
                 
-        pageMenu.setItems(["1-50", "51-100", "101-150", "151-200"], selectedItemIndex: 0)
+        pageMenu.setItems(["1-30", "31-60", "61-90", "91-120"], selectedItemIndex: 0)
         
         pageMenu.permutationWay = .notScrollEqualWidths
         pageMenu.selectedItemTitleColor = R.color.main()!
@@ -47,7 +47,7 @@ class GLMazeMainVC: GLMainViewController {
         for item in 0..<4 {
             
             let vc = GLMazeListVC.init()
-            vc.startGrade = item * 50 + 1
+            vc.startGrade = item * 30 + 1
             self.addChild(vc)
         }
         

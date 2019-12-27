@@ -8,10 +8,13 @@
 
 import UIKit
 
+fileprivate let side = 4
+
 class GLCurrentView: UIView {
     
     static var shared: GLCurrentView = {
-        let view = GLCurrentView.init(frame: CGRect(x: 0, y: 0, width: GridW - WallW, height: GridW - WallW))
+        let view = GLCurrentView.init(frame: CGRect(x: side, y: side, width: GridW - WallW - 2 * side, height: GridW - WallW - 2 * side))
+        view.cornerRadius = view.width * 0.5
         view.backgroundColor = UIColor.green
         return view
     }()
@@ -21,7 +24,8 @@ class GLCurrentView: UIView {
 class GLStartView: UIView {
     
     static var shared: GLStartView = {
-        let view = GLStartView.init(frame: CGRect(x: 0, y: 0, width: GridW - WallW, height: GridW - WallW))
+        let view = GLStartView.init(frame: CGRect(x: side, y: side, width: GridW - WallW - 2 * side, height: GridW - WallW - 2 * side))
+        view.cornerRadius = view.width * 0.5
         view.backgroundColor = UIColor.cyan
         return view
     }()
@@ -31,7 +35,8 @@ class GLStartView: UIView {
 class GLEndView: UIView {
     
     static var shared: GLEndView = {
-        let view = GLEndView.init(frame: CGRect(x: 0, y: 0, width: GridW - WallW, height: GridW - WallW))
+        let view = GLEndView.init(frame: CGRect(x: side, y: side, width: GridW - WallW - 2 * side, height: GridW - WallW - 2 * side))
+        view.cornerRadius = view.width * 0.5
         view.backgroundColor = UIColor.red
         return view
     }()

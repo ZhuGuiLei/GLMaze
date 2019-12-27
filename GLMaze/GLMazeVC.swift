@@ -28,14 +28,14 @@ class GLMazeVC: GLMainViewController {
     var grade: Int = 1
     
     var row: Int {
-        return 8 + grade * 1
+        return 12 + grade * 1 + grade / 2
     }
     var column: Int {
-        return 12 + grade * 1 + grade / 2
+        return 8 + grade * 1
     }
     
     var gridModels: [[GLGridModel]] = []
-    
+    var maze: GLMazeView!
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -60,8 +60,14 @@ class GLMazeVC: GLMainViewController {
         gridModels = GLMazeManager.createMazeData(row: row, column: column)
         GLMazeManager.createPath(gridModels: gridModels) {
             
-            GLMazeManager.drawMaze(gridModels: self.gridModels, toView: self.view)
-            GLProgressHUD.dismissOne()
+            self.maze = GLMazeManager.drawMaze(gridModels: self.gridModels, toView: self.view)
+            GLProgressHUD.showIndicator(msg: "生成路线中...")
+            GLMazeManager.createLongPath(gridModels: self.gridModels) { (paths) in
+
+//                self.maze.set(start: paths.first!, end: paths.last!)
+                GLProgressHUD.dismissAll()
+                
+            }
         }
         
         

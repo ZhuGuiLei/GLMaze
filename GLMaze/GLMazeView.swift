@@ -71,34 +71,25 @@ class GLMazeView: UIView {
         self.gridModels = gridModels
         
         
-        let row = gridModels.first!.count
-        let column = gridModels.count
+        let colume = gridModels.first!.count
+        let row = gridModels.count
         
-        w = CGFloat(GridW * row)
-        h = CGFloat(GridW * column)
+        w = CGFloat(GridW * colume + WallW * colume + WallW)
+        h = CGFloat(GridW * row + WallW * row + WallW)
         
         self.addSubview(maze)
         maze.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
-            make.width.equalTo(GridW * row)
-            make.height.equalTo(GridW * column)
+            make.width.equalTo(w)
+            make.height.equalTo(h)
         }
         
-        for column in 0..<gridModels.count {
-            let items = gridModels[column]
-            for row in 0..<items.count {
-                let item = items[row]
+        for (row, items) in gridModels.enumerated() {
+            for (column, item) in items.enumerated() {
                 maze.layer.addSublayer(item.view)
-                item.view.frame = CGRect(x: GridW * row, y: GridW * column, width: GridW, height: GridW)
+                item.view.frame = CGRect(x: (GridW + WallW) * column + WallW, y: (GridW + WallW) * row + WallW, width: GridW, height: GridW)
             }
         }
-        
-        currentGrid = gridModels[0][0]
-        let arr = gridModels.last!
-        endGrid = arr.last!
-        currentGrid.view.addSublayer(GLStartView.shared.layer)
-        
-        
         
         self.allShow()
         
@@ -117,7 +108,12 @@ class GLMazeView: UIView {
     func allShow() {
         let scale = min(Wi / w, Hi / h) * 0.9
         maze.transform = maze.transform.scaledBy(x: scale, y: scale)
-        
+    }
+    
+    func set(start: GLGridModel, end: GLGridModel) {
+        start.view.addSublayer(GLStartView.shared.layer)
+        currentGrid = start
+        endGrid = end
     }
     
     deinit {
@@ -181,7 +177,7 @@ extension GLMazeView: UIGestureRecognizerDelegate
                 }) { (finished) in
                     GLCurrentView.shared.transform = CGAffineTransform.identity
                     self.currentGrid = self.currentGrid.top!.gridMain
-                    if self.currentGrid.sideGrids.count == 2 {
+                    if !IsSingleStep && self.currentGrid.sideGrids.count == 2 {
                         if self.currentGrid.canUp {
                             self.swipeAction(swipe: self.swipeUp)
                         } else if self.currentGrid.canLeft {
@@ -200,7 +196,7 @@ extension GLMazeView: UIGestureRecognizerDelegate
                 }) { (finished) in
                     GLCurrentView.shared.transform = CGAffineTransform.identity
                     self.currentGrid = self.currentGrid.left!.gridMain
-                    if self.currentGrid.sideGrids.count == 2 {
+                    if !IsSingleStep && self.currentGrid.sideGrids.count == 2 {
                         if self.currentGrid.canUp {
                             self.swipeAction(swipe: self.swipeUp)
                         } else if self.currentGrid.canLeft {
@@ -218,7 +214,7 @@ extension GLMazeView: UIGestureRecognizerDelegate
                 }) { (finished) in
                     GLCurrentView.shared.transform = CGAffineTransform.identity
                     self.currentGrid = self.currentGrid.bottom.gridNext
-                    if self.currentGrid.sideGrids.count == 2 {
+                    if !IsSingleStep && self.currentGrid.sideGrids.count == 2 {
                         if self.currentGrid.canLeft {
                             self.swipeAction(swipe: self.swipeLeft)
                         } else if self.currentGrid.canDown {
@@ -236,7 +232,7 @@ extension GLMazeView: UIGestureRecognizerDelegate
                 }) { (finished) in
                     GLCurrentView.shared.transform = CGAffineTransform.identity
                     self.currentGrid = self.currentGrid.right.gridNext
-                    if self.currentGrid.sideGrids.count == 2 {
+                    if !IsSingleStep && self.currentGrid.sideGrids.count == 2 {
                         if self.currentGrid.canUp {
                             self.swipeAction(swipe: self.swipeUp)
                         } else if self.currentGrid.canDown {

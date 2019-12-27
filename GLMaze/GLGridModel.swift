@@ -8,34 +8,52 @@
 
 import UIKit
 
-let WallColor = UIColor.white(138)
+let WallColor = UIColor.white(248)
 let WallW = 2
 let GridW = 20
 let MoveSpeed = 0.1
 
+let IsSingleStep = false
+
+
 class GLGridModel: NSObject {
     var row: Int = 0
     var column: Int = 0
+    
+    var step: Int = 0
+    var showStep = false {
+        didSet {
+            if showStep {
+                let t = CATextLayer.init()
+                t.frame = CGRect(x: 0, y: 5, width: GridW, height: 10)
+                t.fontSize = 8
+                t.foregroundColor = R.color.w666()?.cgColor
+                t.alignmentMode = .center
+                t.string = "\(step)"
+                view.addSublayer(t)
+            }
+        }
+    }
     
     var top: GLWallModel?
     var left: GLWallModel?
     var bottom: GLWallModel = GLWallModel.init()
     var right: GLWallModel = GLWallModel.init()
     
-    var canUp: Bool {
+    lazy var canUp: Bool = {
         return top?.isPath == true
-    }
-    var canLeft: Bool {
+    }()
+    lazy var canLeft: Bool = {
         return left?.isPath == true
-    }
-    var canDown: Bool {
+    }()
+    lazy var canDown: Bool = {
         return bottom.isPath
-    }
-    var canRight: Bool {
+    }()
+    lazy var canRight: Bool = {
         return right.isPath
-    }
+    }()
     
-    var sideGrids: [GLGridModel] {
+    lazy var sideGrids: [GLGridModel] = {
         var sides = [GLGridModel]()
         if canUp {
             sides.append(top!.gridMain)
@@ -50,9 +68,9 @@ class GLGridModel: NSObject {
             sides.append(right.gridNext!)
         }
         return sides
-    }
+    }()
     
-    var wallSet: Set<GLWallModel> {
+    lazy var wallSet: Set<GLWallModel> = {
         var set: Set<GLWallModel> = [bottom, right]
         if top != nil {
             set.insert(top!)
@@ -61,31 +79,31 @@ class GLGridModel: NSObject {
             set.insert(left!)
         }
         return set
-    }
+    }()
     
     lazy var view: CALayer = {
         let view = CALayer.init()
         if top == nil {
             let t = CALayer.init()
-            t.frame = CGRect(x: -WallW, y: -WallW, width: GridW+WallW, height: WallW)
+            t.frame = CGRect(x: -WallW, y: -WallW, width: GridW+WallW*2, height: WallW)
             t.backgroundColor = WallColor.cgColor
             view.addSublayer(t)
         }
         if left == nil {
             let l = CALayer.init()
-            l.frame = CGRect(x: -WallW, y: -WallW, width: WallW, height: GridW+WallW)
+            l.frame = CGRect(x: -WallW, y: -WallW, width: WallW, height: GridW+WallW*2)
             l.backgroundColor = WallColor.cgColor
             view.addSublayer(l)
         }
         if !bottom.isPath {
             let b = CALayer.init()
-            b.frame = CGRect(x: -WallW, y: GridW-WallW, width: GridW+WallW, height: WallW)
+            b.frame = CGRect(x: -WallW, y: GridW, width: GridW+WallW*2, height: WallW)
             b.backgroundColor = WallColor.cgColor
             view.addSublayer(b)
         }
         if !right.isPath {
             let r = CALayer.init()
-            r.frame = CGRect(x: GridW-WallW, y: -WallW, width: WallW, height: GridW+WallW)
+            r.frame = CGRect(x: GridW, y: -WallW, width: WallW, height: GridW+WallW*2)
             r.backgroundColor = WallColor.cgColor
             view.addSublayer(r)
         }
