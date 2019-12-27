@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18A6120623A35CDA00D35201 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6120523A35CDA00D35201 /* AppDelegate.swift */; };
+		18A6120A23A35CDA00D35201 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6120923A35CDA00D35201 /* ViewController.swift */; };
+		18A6120D23A35CDA00D35201 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A6120B23A35CDA00D35201 /* Main.storyboard */; };
+		18A6120F23A35CDB00D35201 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A6120E23A35CDB00D35201 /* Assets.xcassets */; };
+		18A6121223A35CDB00D35201 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A6121023A35CDB00D35201 /* LaunchScreen.storyboard */; };
+		18A6121D23A3633E00D35201 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6121C23A3633E00D35201 /* R.generated.swift */; };
+		18C4B3FF23B3392B004D47BE /* GLMazeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4B3FE23B3392B004D47BE /* GLMazeListVC.swift */; };
+		18C4B40123B3397B004D47BE /* GLMainNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4B40023B3397B004D47BE /* GLMainNavController.swift */; };
+		18C4B40623B340AA004D47BE /* GLMazeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4B40423B340AA004D47BE /* GLMazeListCell.swift */; };
+		18C4B40723B340AA004D47BE /* GLMazeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C4B40523B340AA004D47BE /* GLMazeListCell.xib */; };
+		18C4B40923B342E4004D47BE /* GLMazeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4B40823B342E4004D47BE /* GLMazeVC.swift */; };
+		18C4B40B23B34DEB004D47BE /* GLMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4B40A23B34DEB004D47BE /* GLMainViewController.swift */; };
+		18C4B40D23B35016004D47BE /* GLGridModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4B40C23B35016004D47BE /* GLGridModel.swift */; };
+		18C4B40F23B35362004D47BE /* GLWallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4B40E23B35362004D47BE /* GLWallModel.swift */; };
+		18C4B41123B35CD0004D47BE /* Array+GL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4B41023B35CD0004D47BE /* Array+GL.swift */; };
+		18C4B41323B44C2A004D47BE /* GLMazeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4B41223B44C2A004D47BE /* GLMazeView.swift */; };
+		18C4B41523B45744004D47BE /* GLMazeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4B41423B45744004D47BE /* GLMazeManager.swift */; };
+		18C4B41823B4ACCB004D47BE /* GLProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4B41723B4ACCB004D47BE /* GLProgressHUD.swift */; };
+		18C4B41A23B4B8DF004D47BE /* GLMazeMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4B41923B4B8DF004D47BE /* GLMazeMainVC.swift */; };
+		18F4972123ADA7E000A81E7E /* Date_Strig+GL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4970B23ADA70A00A81E7E /* Date_Strig+GL.swift */; };
+		18F4972223ADA7E800A81E7E /* GLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4970C23ADA70A00A81E7E /* GLUtils.swift */; };
+		18F4972323ADA7E800A81E7E /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4970D23ADA70A00A81E7E /* Method.swift */; };
+		18F4972423ADA7E800A81E7E /* NSObject+GL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4970E23ADA70A00A81E7E /* NSObject+GL.swift */; };
+		18F4972523ADA7E800A81E7E /* String+GL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4970F23ADA70A00A81E7E /* String+GL.swift */; };
+		18F4972623ADA7E800A81E7E /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4971023ADA70A00A81E7E /* StringExtensions.swift */; };
+		18F4972723ADA7E800A81E7E /* UIButton+GL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4971123ADA70A00A81E7E /* UIButton+GL.swift */; };
+		18F4972823ADA7E800A81E7E /* UIColor+GL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4971223ADA70A00A81E7E /* UIColor+GL.swift */; };
+		18F4972923ADA7E800A81E7E /* UIImage+GL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4971323ADA70A00A81E7E /* UIImage+GL.swift */; };
+		18F4972A23ADA7E800A81E7E /* UITableView+GL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4971423ADA70A00A81E7E /* UITableView+GL.swift */; };
+		18F4972B23ADA7E800A81E7E /* UIView+GL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4971523ADA70A00A81E7E /* UIView+GL.swift */; };
+		18F4972C23ADA7E800A81E7E /* UIView+GLFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4971623ADA70A00A81E7E /* UIView+GLFrame.swift */; };
+		18F4972D23ADA7E800A81E7E /* UIViewController+GL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4971723ADA70A00A81E7E /* UIViewController+GL.swift */; };
+		18F4972E23ADA7E800A81E7E /* UIViewController+Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4971823ADA70A00A81E7E /* UIViewController+Method.swift */; };
+		696877D5F77330E8947EF811 /* Pods_GLMaze.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B53B917CDA9E4F15D01E821 /* Pods_GLMaze.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		18A6120223A35CDA00D35201 /* GLMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18A6120523A35CDA00D35201 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		18A6120923A35CDA00D35201 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18A6120C23A35CDA00D35201 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18A6120E23A35CDB00D35201 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18A6121123A35CDB00D35201 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18A6121323A35CDB00D35201 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18A6121C23A3633E00D35201 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		18C4B3FE23B3392B004D47BE /* GLMazeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLMazeListVC.swift; sourceTree = "<group>"; };
+		18C4B40023B3397B004D47BE /* GLMainNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLMainNavController.swift; sourceTree = "<group>"; };
+		18C4B40423B340AA004D47BE /* GLMazeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLMazeListCell.swift; sourceTree = "<group>"; };
+		18C4B40523B340AA004D47BE /* GLMazeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLMazeListCell.xib; sourceTree = "<group>"; };
+		18C4B40823B342E4004D47BE /* GLMazeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLMazeVC.swift; sourceTree = "<group>"; };
+		18C4B40A23B34DEB004D47BE /* GLMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLMainViewController.swift; sourceTree = "<group>"; };
+		18C4B40C23B35016004D47BE /* GLGridModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLGridModel.swift; sourceTree = "<group>"; };
+		18C4B40E23B35362004D47BE /* GLWallModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLWallModel.swift; sourceTree = "<group>"; };
+		18C4B41023B35CD0004D47BE /* Array+GL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+GL.swift"; sourceTree = "<group>"; };
+		18C4B41223B44C2A004D47BE /* GLMazeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLMazeView.swift; sourceTree = "<group>"; };
+		18C4B41423B45744004D47BE /* GLMazeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLMazeManager.swift; sourceTree = "<group>"; };
+		18C4B41723B4ACCB004D47BE /* GLProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLProgressHUD.swift; sourceTree = "<group>"; };
+		18C4B41923B4B8DF004D47BE /* GLMazeMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLMazeMainVC.swift; sourceTree = "<group>"; };
+		18F4970B23ADA70A00A81E7E /* Date_Strig+GL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Date_Strig+GL.swift"; path = "Extension/GLExtension/Date_Strig+GL.swift"; sourceTree = "<group>"; };
+		18F4970C23ADA70A00A81E7E /* GLUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GLUtils.swift; path = Extension/GLExtension/GLUtils.swift; sourceTree = "<group>"; };
+		18F4970D23ADA70A00A81E7E /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Method.swift; path = Extension/GLExtension/Method.swift; sourceTree = "<group>"; };
+		18F4970E23ADA70A00A81E7E /* NSObject+GL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSObject+GL.swift"; path = "Extension/GLExtension/NSObject+GL.swift"; sourceTree = "<group>"; };
+		18F4970F23ADA70A00A81E7E /* String+GL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+GL.swift"; path = "Extension/GLExtension/String+GL.swift"; sourceTree = "<group>"; };
+		18F4971023ADA70A00A81E7E /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Extension/GLExtension/StringExtensions.swift; sourceTree = "<group>"; };
+		18F4971123ADA70A00A81E7E /* UIButton+GL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIButton+GL.swift"; path = "Extension/GLExtension/UIButton+GL.swift"; sourceTree = "<group>"; };
+		18F4971223ADA70A00A81E7E /* UIColor+GL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIColor+GL.swift"; path = "Extension/GLExtension/UIColor+GL.swift"; sourceTree = "<group>"; };
+		18F4971323ADA70A00A81E7E /* UIImage+GL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+GL.swift"; path = "Extension/GLExtension/UIImage+GL.swift"; sourceTree = "<group>"; };
+		18F4971423ADA70A00A81E7E /* UITableView+GL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableView+GL.swift"; path = "Extension/GLExtension/UITableView+GL.swift"; sourceTree = "<group>"; };
+		18F4971523ADA70A00A81E7E /* UIView+GL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+GL.swift"; path = "Extension/GLExtension/UIView+GL.swift"; sourceTree = "<group>"; };
+		18F4971623ADA70A00A81E7E /* UIView+GLFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+GLFrame.swift"; path = "Extension/GLExtension/UIView+GLFrame.swift"; sourceTree = "<group>"; };
+		18F4971723ADA70A00A81E7E /* UIViewController+GL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+GL.swift"; path = "Extension/GLExtension/UIViewController+GL.swift"; sourceTree = "<group>"; };
+		18F4971823ADA70A00A81E7E /* UIViewController+Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+Method.swift"; path = "Extension/GLExtension/UIViewController+Method.swift"; sourceTree = "<group>"; };
+		4B53B917CDA9E4F15D01E821 /* Pods_GLMaze.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GLMaze.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F14768F547075EA297B947F /* Pods-GLMaze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLMaze.debug.xcconfig"; path = "Target Support Files/Pods-GLMaze/Pods-GLMaze.debug.xcconfig"; sourceTree = "<group>"; };
+		A66E6E742C231CB9E3010269 /* Pods-GLMaze.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GLMaze.release.xcconfig"; path = "Target Support Files/Pods-GLMaze/Pods-GLMaze.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18A611FF23A35CDA00D35201 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				696877D5F77330E8947EF811 /* Pods_GLMaze.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18A611F923A35CDA00D35201 = {
+			isa = PBXGroup;
+			children = (
+				18A6120423A35CDA00D35201 /* GLMaze */,
+				18A6120323A35CDA00D35201 /* Products */,
+				4910486D32EF219C19F04064 /* Pods */,
+				B57ABA5C6E6A4BE8306135A8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		18A6120323A35CDA00D35201 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18A6120223A35CDA00D35201 /* GLMaze.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18A6120423A35CDA00D35201 /* GLMaze */ = {
+			isa = PBXGroup;
+			children = (
+				18F4972023ADA70A00A81E7E /* GLExtension */,
+				18C4B41723B4ACCB004D47BE /* GLProgressHUD.swift */,
+				18A6120523A35CDA00D35201 /* AppDelegate.swift */,
+				18C4B40A23B34DEB004D47BE /* GLMainViewController.swift */,
+				18C4B40023B3397B004D47BE /* GLMainNavController.swift */,
+				18C4B41623B459C8004D47BE /* 等级列表 */,
+				18C4B40823B342E4004D47BE /* GLMazeVC.swift */,
+				18C4B41423B45744004D47BE /* GLMazeManager.swift */,
+				18C4B41223B44C2A004D47BE /* GLMazeView.swift */,
+				18C4B40C23B35016004D47BE /* GLGridModel.swift */,
+				18C4B40E23B35362004D47BE /* GLWallModel.swift */,
+				18A6120923A35CDA00D35201 /* ViewController.swift */,
+				18A6120B23A35CDA00D35201 /* Main.storyboard */,
+				18A6120E23A35CDB00D35201 /* Assets.xcassets */,
+				18A6121023A35CDB00D35201 /* LaunchScreen.storyboard */,
+				18A6121323A35CDB00D35201 /* Info.plist */,
+				18A6121C23A3633E00D35201 /* R.generated.swift */,
+			);
+			path = GLMaze;
+			sourceTree = "<group>";
+		};
+		18C4B41623B459C8004D47BE /* 等级列表 */ = {
+			isa = PBXGroup;
+			children = (
+				18C4B41923B4B8DF004D47BE /* GLMazeMainVC.swift */,
+				18C4B3FE23B3392B004D47BE /* GLMazeListVC.swift */,
+				18C4B40423B340AA004D47BE /* GLMazeListCell.swift */,
+				18C4B40523B340AA004D47BE /* GLMazeListCell.xib */,
+			);
+			path = "等级列表";
+			sourceTree = "<group>";
+		};
+		18F4972023ADA70A00A81E7E /* GLExtension */ = {
+			isa = PBXGroup;
+			children = (
+				18F4970B23ADA70A00A81E7E /* Date_Strig+GL.swift */,
+				18F4970C23ADA70A00A81E7E /* GLUtils.swift */,
+				18F4970D23ADA70A00A81E7E /* Method.swift */,
+				18F4970E23ADA70A00A81E7E /* NSObject+GL.swift */,
+				18F4970F23ADA70A00A81E7E /* String+GL.swift */,
+				18F4971023ADA70A00A81E7E /* StringExtensions.swift */,
+				18F4971123ADA70A00A81E7E /* UIButton+GL.swift */,
+				18F4971223ADA70A00A81E7E /* UIColor+GL.swift */,
+				18F4971323ADA70A00A81E7E /* UIImage+GL.swift */,
+				18F4971423ADA70A00A81E7E /* UITableView+GL.swift */,
+				18F4971523ADA70A00A81E7E /* UIView+GL.swift */,
+				18F4971623ADA70A00A81E7E /* UIView+GLFrame.swift */,
+				18F4971723ADA70A00A81E7E /* UIViewController+GL.swift */,
+				18F4971823ADA70A00A81E7E /* UIViewController+Method.swift */,
+				18C4B41023B35CD0004D47BE /* Array+GL.swift */,
+			);
+			path = GLExtension;
+			sourceTree = "<group>";
+		};
+		4910486D32EF219C19F04064 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F14768F547075EA297B947F /* Pods-GLMaze.debug.xcconfig */,
+				A66E6E742C231CB9E3010269 /* Pods-GLMaze.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B57ABA5C6E6A4BE8306135A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B53B917CDA9E4F15D01E821 /* Pods_GLMaze.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18A6120123A35CDA00D35201 /* GLMaze */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18A6121623A35CDB00D35201 /* Build configuration list for PBXNativeTarget "GLMaze" */;
+			buildPhases = (
+				46ABA95F7B94F139943DF3FA /* [CP] Check Pods Manifest.lock */,
+				18A6121B23A362C000D35201 /* ShellScript */,
+				18A611FE23A35CDA00D35201 /* Sources */,
+				18A611FF23A35CDA00D35201 /* Frameworks */,
+				18A6120023A35CDA00D35201 /* Resources */,
+				CA3FE79C15619656DC4785E3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GLMaze;
+			productName = GLMaze;
+			productReference = 18A6120223A35CDA00D35201 /* GLMaze.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18A611FA23A35CDA00D35201 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = GL;
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = layne;
+				TargetAttributes = {
+					18A6120123A35CDA00D35201 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 18A611FD23A35CDA00D35201 /* Build configuration list for PBXProject "GLMaze" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 18A611F923A35CDA00D35201;
+			productRefGroup = 18A6120323A35CDA00D35201 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18A6120123A35CDA00D35201 /* GLMaze */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18A6120023A35CDA00D35201 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18A6121223A35CDB00D35201 /* LaunchScreen.storyboard in Resources */,
+				18A6120F23A35CDB00D35201 /* Assets.xcassets in Resources */,
+				18A6120D23A35CDA00D35201 /* Main.storyboard in Resources */,
+				18C4B40723B340AA004D47BE /* GLMazeListCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18A6121B23A362C000D35201 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+		46ABA95F7B94F139943DF3FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GLMaze-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA3FE79C15619656DC4785E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GLMaze/Pods-GLMaze-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GLMaze/Pods-GLMaze-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GLMaze/Pods-GLMaze-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18A611FE23A35CDA00D35201 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18F4972723ADA7E800A81E7E /* UIButton+GL.swift in Sources */,
+				18F4972823ADA7E800A81E7E /* UIColor+GL.swift in Sources */,
+				18C4B41A23B4B8DF004D47BE /* GLMazeMainVC.swift in Sources */,
+				18F4972923ADA7E800A81E7E /* UIImage+GL.swift in Sources */,
+				18C4B40923B342E4004D47BE /* GLMazeVC.swift in Sources */,
+				18C4B41323B44C2A004D47BE /* GLMazeView.swift in Sources */,
+				18A6120A23A35CDA00D35201 /* ViewController.swift in Sources */,
+				18F4972223ADA7E800A81E7E /* GLUtils.swift in Sources */,
+				18F4972323ADA7E800A81E7E /* Method.swift in Sources */,
+				18C4B3FF23B3392B004D47BE /* GLMazeListVC.swift in Sources */,
+				18F4972623ADA7E800A81E7E /* StringExtensions.swift in Sources */,
+				18A6120623A35CDA00D35201 /* AppDelegate.swift in Sources */,
+				18F4972423ADA7E800A81E7E /* NSObject+GL.swift in Sources */,
+				18F4972A23ADA7E800A81E7E /* UITableView+GL.swift in Sources */,
+				18C4B40D23B35016004D47BE /* GLGridModel.swift in Sources */,
+				18C4B40B23B34DEB004D47BE /* GLMainViewController.swift in Sources */,
+				18C4B41823B4ACCB004D47BE /* GLProgressHUD.swift in Sources */,
+				18F4972123ADA7E000A81E7E /* Date_Strig+GL.swift in Sources */,
+				18F4972C23ADA7E800A81E7E /* UIView+GLFrame.swift in Sources */,
+				18C4B40F23B35362004D47BE /* GLWallModel.swift in Sources */,
+				18F4972E23ADA7E800A81E7E /* UIViewController+Method.swift in Sources */,
+				18F4972B23ADA7E800A81E7E /* UIView+GL.swift in Sources */,
+				18C4B40623B340AA004D47BE /* GLMazeListCell.swift in Sources */,
+				18A6121D23A3633E00D35201 /* R.generated.swift in Sources */,
+				18C4B41123B35CD0004D47BE /* Array+GL.swift in Sources */,
+				18C4B40123B3397B004D47BE /* GLMainNavController.swift in Sources */,
+				18F4972523ADA7E800A81E7E /* String+GL.swift in Sources */,
+				18C4B41523B45744004D47BE /* GLMazeManager.swift in Sources */,
+				18F4972D23ADA7E800A81E7E /* UIViewController+GL.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		18A6120B23A35CDA00D35201 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18A6120C23A35CDA00D35201 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		18A6121023A35CDB00D35201 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18A6121123A35CDB00D35201 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18A6121423A35CDB00D35201 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		18A6121523A35CDB00D35201 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18A6121723A35CDB00D35201 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F14768F547075EA297B947F /* Pods-GLMaze.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WWTD6G9KA5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library/Rswift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit.framework/Headers\"",
+				);
+				INFOPLIST_FILE = GLMaze/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lingjiang.GLMaze;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		18A6121823A35CDB00D35201 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A66E6E742C231CB9E3010269 /* Pods-GLMaze.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WWTD6G9KA5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library/Rswift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit.framework/Headers\"",
+				);
+				INFOPLIST_FILE = GLMaze/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lingjiang.GLMaze;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18A611FD23A35CDA00D35201 /* Build configuration list for PBXProject "GLMaze" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18A6121423A35CDB00D35201 /* Debug */,
+				18A6121523A35CDB00D35201 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18A6121623A35CDB00D35201 /* Build configuration list for PBXNativeTarget "GLMaze" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18A6121723A35CDB00D35201 /* Debug */,
+				18A6121823A35CDB00D35201 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18A611FA23A35CDA00D35201 /* Project object */;
+}

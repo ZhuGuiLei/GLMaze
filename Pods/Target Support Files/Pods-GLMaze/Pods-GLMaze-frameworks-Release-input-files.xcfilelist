@@ -1,0 +1,6 @@
+${PODS_ROOT}/Target Support Files/Pods-GLMaze/Pods-GLMaze-frameworks.sh
+${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework
+${BUILT_PRODUCTS_DIR}/SPPageMenu/SPPageMenu.framework
+${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
