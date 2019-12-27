@@ -11,6 +11,7 @@ import UIKit
 let WallColor = UIColor.white(138)
 let WallW = 2
 let GridW = 20
+let MoveSpeed = 0.1
 
 class GLGridModel: NSObject {
     var row: Int = 0
@@ -18,8 +19,38 @@ class GLGridModel: NSObject {
     
     var top: GLWallModel?
     var left: GLWallModel?
-    var bottom: GLWallModel!
-    var right: GLWallModel!
+    var bottom: GLWallModel = GLWallModel.init()
+    var right: GLWallModel = GLWallModel.init()
+    
+    var canUp: Bool {
+        return top?.isPath == true
+    }
+    var canLeft: Bool {
+        return left?.isPath == true
+    }
+    var canDown: Bool {
+        return bottom.isPath
+    }
+    var canRight: Bool {
+        return right.isPath
+    }
+    
+    var sideGrids: [GLGridModel] {
+        var sides = [GLGridModel]()
+        if canUp {
+            sides.append(top!.gridMain)
+        }
+        if canLeft {
+            sides.append(left!.gridMain)
+        }
+        if canDown {
+            sides.append(bottom.gridNext!)
+        }
+        if canRight {
+            sides.append(right.gridNext!)
+        }
+        return sides
+    }
     
     var wallSet: Set<GLWallModel> {
         var set: Set<GLWallModel> = [bottom, right]
@@ -68,9 +99,7 @@ class GLGridModel: NSObject {
         self.row = row
         self.column = column
         
-        bottom = GLWallModel.init()
         bottom.gridMain = self
-        right = GLWallModel.init()
         right.gridMain = self
     }
 }

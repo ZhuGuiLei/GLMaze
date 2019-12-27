@@ -11,9 +11,21 @@ import UIKit
 class GLMazeView: UIView {
 
     var maze: UIView = UIView.init()
-    
+    var gridModels: [[GLGridModel]] = []
     var w: CGFloat = 0
     var h: CGFloat = 0
+    
+    var currentGrid: GLGridModel! {
+        didSet {
+            currentGrid.view.addSublayer(GLCurrentView.shared.layer)
+        }
+    }
+    var endGrid: GLGridModel! {
+        didSet {
+            endGrid.view.addSublayer(GLEndView.shared.layer)
+        }
+    }
+    
     
     lazy var pan: UIPanGestureRecognizer = {
         let pan = UIPanGestureRecognizer.init(target: self, action: #selector(twoPanAction(pan:)))
@@ -28,16 +40,43 @@ class GLMazeView: UIView {
         return pinch
     }()
     
+    lazy var swipeUp: UISwipeGestureRecognizer = {
+        let swipe = UISwipeGestureRecognizer.init(target: self, action: #selector(swipeAction(swipe:)))
+        swipe.numberOfTouchesRequired = 1
+        swipe.direction = .up
+        return swipe
+    }()
+    lazy var swipeLeft: UISwipeGestureRecognizer = {
+        let swipe = UISwipeGestureRecognizer.init(target: self, action: #selector(swipeAction(swipe:)))
+        swipe.numberOfTouchesRequired = 1
+        swipe.direction = .left
+        return swipe
+    }()
+    lazy var swipeDown: UISwipeGestureRecognizer = {
+        let swipe = UISwipeGestureRecognizer.init(target: self, action: #selector(swipeAction(swipe:)))
+        swipe.numberOfTouchesRequired = 1
+        swipe.direction = .down
+        return swipe
+    }()
+    lazy var swipeRight: UISwipeGestureRecognizer = {
+        let swipe = UISwipeGestureRecognizer.init(target: self, action: #selector(swipeAction(swipe:)))
+        swipe.numberOfTouchesRequired = 1
+        swipe.direction = .right
+        return swipe
+    }()
+    
     
     init(gridModels: [[GLGridModel]]) {
         super.init(frame: .zero)
+        self.gridModels = gridModels
+        
         
         let row = gridModels.first!.count
         let column = gridModels.count
         
         w = CGFloat(GridW * row)
         h = CGFloat(GridW * column)
-//        let maze = UIView.init()
+        
         self.addSubview(maze)
         maze.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
@@ -54,11 +93,21 @@ class GLMazeView: UIView {
             }
         }
         
+        currentGrid = gridModels[0][0]
+        let arr = gridModels.last!
+        endGrid = arr.last!
+        currentGrid.view.addSublayer(GLStartView.shared.layer)
+        
+        
+        
         self.allShow()
         
         self.addGestureRecognizer(pan)
-        
         self.addGestureRecognizer(pinch)
+        self.addGestureRecognizer(swipeUp)
+        self.addGestureRecognizer(swipeLeft)
+        self.addGestureRecognizer(swipeDown)
+        self.addGestureRecognizer(swipeRight)
     }
     
     required init?(coder: NSCoder) {
@@ -80,7 +129,6 @@ class GLMazeView: UIView {
 extension GLMazeView: UIGestureRecognizerDelegate
 {
     @objc func twoPanAction(pan: UIPanGestureRecognizer) {
-        //        pinch.require(toFail: pan)
         
         //获取偏移量
         // 返回的是相对于最原始的手指的偏移量
@@ -108,7 +156,6 @@ extension GLMazeView: UIGestureRecognizerDelegate
     }
     
     @objc func pinchAction(pinch: UIPinchGestureRecognizer) {
-        //        pan.require(toFail: pinch)
         
         var transform = maze.transform.scaledBy(x: pinch.scale, y: pinch.scale)
         if transform.a > 2 {
@@ -123,6 +170,84 @@ extension GLMazeView: UIGestureRecognizerDelegate
         maze.transform = transform
         // 复位
         pinch.scale = 1
+    }
+    
+    
+    @objc func swipeAction(swipe: UISwipeGestureRecognizer) {
+        if swipe.direction == .up {
+            if currentGrid.canUp {
+                UIView.animate(withDuration: MoveSpeed, animations: {
+                    GLCurrentView.shared.transform = CGAffineTransform.identity.translatedBy(x: 0, y: CGFloat(-GridW))
+                }) { (finished) in
+                    GLCurrentView.shared.transform = CGAffineTransform.identity
+                    self.currentGrid = self.currentGrid.top!.gridMain
+                    if self.currentGrid.sideGrids.count == 2 {
+                        if self.currentGrid.canUp {
+                            self.swipeAction(swipe: self.swipeUp)
+                        } else if self.currentGrid.canLeft {
+                            self.swipeAction(swipe: self.swipeLeft)
+                        } else if self.currentGrid.canRight {
+                            self.swipeAction(swipe: self.swipeRight)
+                        }
+                    }
+                }
+                
+            }
+        } else if swipe.direction == .left {
+            if currentGrid.canLeft {
+                UIView.animate(withDuration: MoveSpeed, animations: {
+                    GLCurrentView.shared.transform = CGAffineTransform.identity.translatedBy(x: CGFloat(-GridW), y: 0)
+                }) { (finished) in
+                    GLCurrentView.shared.transform = CGAffineTransform.identity
+                    self.currentGrid = self.currentGrid.left!.gridMain
+                    if self.currentGrid.sideGrids.count == 2 {
+                        if self.currentGrid.canUp {
+                            self.swipeAction(swipe: self.swipeUp)
+                        } else if self.currentGrid.canLeft {
+                            self.swipeAction(swipe: self.swipeLeft)
+                        } else if self.currentGrid.canDown {
+                            self.swipeAction(swipe: self.swipeDown)
+                        }
+                    }
+                }
+            }
+        } else if swipe.direction == .down {
+            if currentGrid.canDown {
+                UIView.animate(withDuration: MoveSpeed, animations: {
+                    GLCurrentView.shared.transform = CGAffineTransform.identity.translatedBy(x: 0, y: CGFloat(GridW))
+                }) { (finished) in
+                    GLCurrentView.shared.transform = CGAffineTransform.identity
+                    self.currentGrid = self.currentGrid.bottom.gridNext
+                    if self.currentGrid.sideGrids.count == 2 {
+                        if self.currentGrid.canLeft {
+                            self.swipeAction(swipe: self.swipeLeft)
+                        } else if self.currentGrid.canDown {
+                            self.swipeAction(swipe: self.swipeDown)
+                        } else if self.currentGrid.canRight {
+                            self.swipeAction(swipe: self.swipeRight)
+                        }
+                    }
+                }
+            }
+        } else if swipe.direction == .right {
+            if currentGrid.canRight {
+                UIView.animate(withDuration: MoveSpeed, animations: {
+                    GLCurrentView.shared.transform = CGAffineTransform.identity.translatedBy(x: CGFloat(GridW), y: 0)
+                }) { (finished) in
+                    GLCurrentView.shared.transform = CGAffineTransform.identity
+                    self.currentGrid = self.currentGrid.right.gridNext
+                    if self.currentGrid.sideGrids.count == 2 {
+                        if self.currentGrid.canUp {
+                            self.swipeAction(swipe: self.swipeUp)
+                        } else if self.currentGrid.canDown {
+                            self.swipeAction(swipe: self.swipeDown)
+                        } else if self.currentGrid.canRight {
+                            self.swipeAction(swipe: self.swipeRight)
+                        }
+                    }
+                }
+            }
+        }
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {

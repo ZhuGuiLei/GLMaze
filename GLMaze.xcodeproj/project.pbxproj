@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1865CF8A23B598BD00D23025 /* GLCurrentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865CF8923B598BD00D23025 /* GLCurrentView.swift */; };
 		18A6120623A35CDA00D35201 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6120523A35CDA00D35201 /* AppDelegate.swift */; };
 		18A6120A23A35CDA00D35201 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6120923A35CDA00D35201 /* ViewController.swift */; };
 		18A6120D23A35CDA00D35201 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A6120B23A35CDA00D35201 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1865CF8923B598BD00D23025 /* GLCurrentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLCurrentView.swift; sourceTree = "<group>"; };
 		18A6120223A35CDA00D35201 /* GLMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A6120523A35CDA00D35201 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18A6120923A35CDA00D35201 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,8 +126,9 @@
 				18C4B40023B3397B004D47BE /* GLMainNavController.swift */,
 				18C4B41623B459C8004D47BE /* 等级列表 */,
 				18C4B40823B342E4004D47BE /* GLMazeVC.swift */,
-				18C4B41423B45744004D47BE /* GLMazeManager.swift */,
 				18C4B41223B44C2A004D47BE /* GLMazeView.swift */,
+				1865CF8923B598BD00D23025 /* GLCurrentView.swift */,
+				18C4B41423B45744004D47BE /* GLMazeManager.swift */,
 				18C4B40C23B35016004D47BE /* GLGridModel.swift */,
 				18C4B40E23B35362004D47BE /* GLWallModel.swift */,
 				18A6120923A35CDA00D35201 /* ViewController.swift */,
@@ -336,6 +339,7 @@
 				18F4972323ADA7E800A81E7E /* Method.swift in Sources */,
 				18C4B3FF23B3392B004D47BE /* GLMazeListVC.swift in Sources */,
 				18F4972623ADA7E800A81E7E /* StringExtensions.swift in Sources */,
+				1865CF8A23B598BD00D23025 /* GLCurrentView.swift in Sources */,
 				18A6120623A35CDA00D35201 /* AppDelegate.swift in Sources */,
 				18F4972423ADA7E800A81E7E /* NSObject+GL.swift in Sources */,
 				18F4972A23ADA7E800A81E7E /* UITableView+GL.swift in Sources */,
